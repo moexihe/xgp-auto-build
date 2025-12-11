@@ -25,7 +25,6 @@ src-git nas https://github.com/linkease/nas-packages.git;master
 src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main
 #xgp
 src-git bandix https://github.com/timsaya/luci-app-bandix.git
-src-git screen https://github.com/zzzz0317/xgp-v3-screen.git
 src-git watchdog https://github.com/sirpdboy/luci-app-watchdog.git
 src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main
 src-git bandixipk https://github.com/timsaya/openwrt-bandix.git
