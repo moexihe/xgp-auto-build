@@ -79,5 +79,12 @@ rm -rf feeds/packages/net/uwsgi/*
 mv package/uwsgi/net/uwsgi/* feeds/packages/net/uwsgi/
 rm -rf package/uwsgi
 
+echo fix hostapd
+rm -rf package/network/services/hostapd
+echo ">>> 拉取 OpenWrt 主分支最新 hostapd 包"
+git clone --depth=1 https://github.com/openwrt/openwrt.git tmp-openwrt
+cp -r tmp-openwrt/package/network/services/hostapd package/network/services/
+rm -rf tmp-openwrt
+
 echo "make lede"
 make V=0 -j$(nproc) || { echo "make failed"; exit 1; }
