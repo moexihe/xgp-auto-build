@@ -1,5 +1,5 @@
 #!/bin/bash
-cd immortalwrt-xgp
+cd immortalwrt
 echo "update feeds"
 ./scripts/feeds update -a || { echo "update feeds failed"; exit 1; }
 echo "install feeds"
@@ -63,21 +63,6 @@ echo "ZZ_BUILD_LEDE_HASH='$(git rev-parse HEAD)'" >> files/etc/zz_build_id
 echo "make download"
 make download -j8 || { echo "download failed"; exit 1; }
 
-echo "fix uswgi"
-# # Change uwsgi
-# mkdir package/uwsgi
-# cd package/uwsgi
-# git init
-# git remote add origin https://github.com/immortalwrt/packages.git
-# git config core.sparsecheckout true
-# echo "net/uwsgi/*" >> .git/info/sparse-checkout
-# git pull origin master
-# rm -rf net/uwsgi/files-luci-support
-# cd ../..
-# cp -r feeds/packages/net/uwsgi/files-luci-support package/uwsgi/net/uwsgi/
-# rm -rf feeds/packages/net/uwsgi/*
-# mv package/uwsgi/net/uwsgi/* feeds/packages/net/uwsgi/
-# rm -rf package/uwsgi
-
 echo "make immortalwrt"
 make V=0 -j$(nproc) || { echo "make failed"; exit 1; }
+
