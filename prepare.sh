@@ -24,10 +24,8 @@ src-git istore https://github.com/linkease/istore.git
 src-git nas https://github.com/linkease/nas-packages.git;master
 src-git nas_luci https://github.com/linkease/nas-packages-luci.git;main
 #xgp
-src-git bandix https://github.com/timsaya/luci-app-bandix.git
 src-git watchdog https://github.com/sirpdboy/luci-app-watchdog.git
 src-git nikki https://github.com/nikkinikki-org/OpenWrt-nikki.git;main
-src-git bandixipk https://github.com/timsaya/openwrt-bandix.git
 EOF
 
 #echo "src-git qmodem https://github.com/zzzz0317/QModem.git;stable202508" >> feeds.conf
